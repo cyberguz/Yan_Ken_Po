@@ -5,10 +5,17 @@ body {
 }
 .container {
     /*background-color: blueviolet;*/
+    /*border: yellow 4px solid;*/
     display: flex;            
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
+.container > h1 {
+    color: antiquewhite;
+    margin-bottom: 0px;
+    
+}
+
 .label {            
     border-radius: 20px;
     /*border: red 2px solid;*/
@@ -34,8 +41,8 @@ body {
     display: flex;            
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 title1 {            
@@ -169,6 +176,7 @@ title3 {
     display: flex;            
     justify-content: center;
     align-items: center;           
+    
 }
 .botton_jugar {
     border: green 2px solid;
@@ -179,12 +187,16 @@ title3 {
     justify-content: center;
     align-items: center;           
     background-color: black;   
-            
+    
+}
+.botton_jugar > a{
+    text-decoration: none;
 }
 .botton_jugar :hover {           
     transform: scale(1.15);
     
 }
+
 .title > a {
     cursor: pointer;
     text-decoration: none;
@@ -198,12 +210,17 @@ title3 {
         height: 15vh;                
     }
     .title {         
-        width: 25%;
-        height: 45h;        
+        width: 30%;
+        height: 45h;
+        border-radius: 5%;   
     }
 
     .imagen {
-        width: 90%;
+        width: 100%;
         height: 35vh;
+    }
+    .botton_jugar :hover {           
+        transform: scale(1.1);
+        
     }
 }

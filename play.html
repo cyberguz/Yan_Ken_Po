@@ -6,27 +6,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./play.css">
     <title>Play</title>
-    
-</head>
-<body>
-    <div class="container">
-        <div class="label">
-            <div class="container-title">
-               <div class="title" id="title1">
-                <img class="imagen" src="https://i.imgur.com/cS2L73w.png" alt="piedra"><a href="./"><h1>Piedra</h1></a>
-                </div>
-                <div class="title" id="title2">
-                <img class="imagen" src="https://i.imgur.com/1iOfaKK.png" alt="papel"><a href="./"><h1>Papel</h1></a>
-                </div>
-                <div class="title" id="title3">
-                <img class="imagen" src="https://i.imgur.com/3DDY0nA.png" alt="tijera"><a href="./"><h1>Tijera</h1></a>
-                </div>  
-            </div>
-            <div class="container-botton">
-                <div class="botton_jugar"><a href="./play.html"><h1>Play</h1></a>                
-                </div>
-            </div>
+    <style>
+        body {
+            background-color: blueviolet;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: blanchedalmond;
+            width: 90%;
+            height: 98vh;
+            border-radius: 30px;
+            margin-top: 5px;
             
+        }
+        .alternativas {
+            display: flex;
+            justify-content: space-around
+        }
+        .container-opcion {
+            background-color: green;
+            margin: 10px 10px 30px 10px; /*arriba, der, abajo, izq*/
+            border-radius: 35%;
+            width: 350px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button-op {
+            border-radius: 10px;
+            background-color: #F2045A;
+            border: none;
+            width: 200px;
+            height: 60px;
+        }
+        .alternative {
+            width: 160px;
+            height: 210px;
+        }
+        .container-eleccion {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .container-resultado {
+            background-color: blueviolet;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .eleccion {
+            background-color: yellow;
+            border: 2px black solid;
+            width: 300px;
+            height: 60px;display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .respuesta {
+            background-color: green;
+            border: 2px black solid;
+            width: 500px;
+            height: 60px;
+            height: 60px;display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+        <script>
+            var op1 = "piedra";
+            var op2 = "papel";
+            var op3 = "tijera";
+            var tuEleccion;
+            var machine;
+            var aleatorio = Math.floor(Math.random()*3);        
+     
+            switch (aleatorio) {
+                case 1:
+                    machine = op1;
+                    break;
+                case 2:
+                    machine = op2;
+                    break;
+                default:
+                    machine = op3;            
+            }
+    
+            function mensaje() {
+            switch (true) {
+                case (tuEleccion === machine):                
+                    result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Empate, vuelve a jugar</h1></p>";
+                    break;
+                case (tuEleccion == "piedra" && machine == "papel"): 
+                    result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
+                    break;
+                case (tuEleccion == "piedra" && machine == "tijera"):
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
+                    break;
+                case (tuEleccion == "papel" && machine == "piedra"):
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
+                    break;
+                case (tuEleccion == "papel" && machine == "tijera"):
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
+                    break;
+                case (tuEleccion == "tijera" && machine == "piedra"):
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
+                    break;
+                default:
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
+                }
+            }
+            function elige () {
+                    document.getElementById("Piedra").addEventListener('click', tuEleccion = op1, true);
+                    
+            }
+            function dember () {
+                    document.getElementById("Papel").addEventListener('click', tuEleccion = op2, false);
+                    
+            }
+            function colorado () {
+                    document.getElementById("Tijera").addEventListener('click', tuEleccion = op3, false);
+                    
+            }
+            function cargar() {
+                    document.getElementById("Piedra").addEventListener( 'click', elige, false );
+                    document.getElementById("Piedra").addEventListener( 'click', mensaje, false );
+            }
+            function miami()
+            {
+                    document.getElementById("Papel").addEventListener( 'click', dember, false );
+                    document.getElementById("Papel").addEventListener( 'click', mensaje, false );
+            }
+            function oslo()
+            {
+                    document.getElementById("Tijera").addEventListener( 'click', colorado, false );
+                    document.getElementById("Tijera").addEventListener( 'click', mensaje, false );
+            }
+        </script>
+    </head>
+    <body onload="cargar(); miami(); oslo();">
+        <div class="container">
+            <div class="alternativas"><h1>Elije tu jugada</h1></div>
+            <div class="alternativas">
+                <div class="container-opcion">
+                    <div><img class="alternative" src="./Images/Piedras.png" alt="Piedra"></div>
+                    <div class="button" id="rojo">
+                        <button class="button-op" id="Piedra"><h1>Piedra</h1></button>
+                    </div>
+                </div>
+                <div class="container-opcion">
+                    <div><img class="alternative" src="./Images/Papel.png" alt="Papel"></div>
+                    <div class="button" id="amarillo">
+                        <button class="button-op" id="Papel"><h1>Papel</h1></button>
+                    </div>
+                </div>        
+                <div class="container-opcion">
+                    <div><img class="alternative" src="./Images/Tijera.png" alt="Tijera"></div>
+                    <div class="button" id="azul">
+                        <button class="button-op" id="Tijera"><h1>Tijera</h1></button>
+                    </div>
+                </div>        
+            </div>
+            <div class="container-eleccion">
+                <div class="eleccion-jugador">
+                    <div id="result" class="eleccion"></div>
+                    <div id="result2" class="eleccion"></div>
+                </div>
+                <div class="elecciones">
+                    <div id="result1" class="eleccion"></div>
+                    <div id="result3" class="eleccion"></div>    
+                </div>                
+            </div>
+            <div class="container-resultado">
+                <div id="result4" class="respuesta"></div>    
+            </div>
         </div>
-        
-    </div>
+    </body>
+    </html>
