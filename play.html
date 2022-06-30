@@ -215,84 +215,7 @@
         }
         
         </style>
-        <script>
-            var op1 = "Piedra";
-            var op2 = "Papel";
-            var op3 = "Tijera";
-            var tuEleccion;
-            var machine;
-            var aleatorio = Math.floor(Math.random()*3);        
-     
-            /*function dime () {
-                aleatorio = Math.floor(Math.random()*3);
-            }*/
-           
-            switch (aleatorio) {
-                case 1:
-                    machine = op1;
-                    break;
-                case 2:
-                    machine = op2;
-                    break;
-                default:
-                    machine = op3;            
-            }
-    
-            function mensaje() {
-            switch (true) {
-                case (tuEleccion === machine):                
-                    result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Empate, vuelve a jugar</h1></p>";
-                    break;
-                case (tuEleccion == "Piedra" && machine == "Papel"): 
-                    result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
-                    break;
-                case (tuEleccion == "Piedra" && machine == "Tijera"):
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
-                    break;
-                case (tuEleccion == "Papel" && machine == "Piedra"):
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
-                    break;
-                case (tuEleccion == "Papel" && machine == "Tijera"):
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
-                    break;
-                case (tuEleccion == "Tijera" && machine == "Piedra"):
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
-                    break;
-                default:
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
-                }
-            }
-            function elige () {
-                    document.getElementById("Piedra").addEventListener('click', tuEleccion = op1, false);                    
-                    
-            }
-            function dember () {
-                    document.getElementById("Papel").addEventListener('click', tuEleccion = op2, false);
-                    
-            }
-            function colorado () {
-                    document.getElementById("Tijera").addEventListener('click', tuEleccion = op3, false);
-                    
-            }
-            function cargar() {
-                    document.getElementById("Piedra").addEventListener( 'click', elige, false );
-                    document.getElementById("Piedra").addEventListener( 'click', mensaje, false );
 
-            }
-            function miami()
-            {
-                    document.getElementById("Papel").addEventListener( 'click', dember, false );
-                    document.getElementById("Papel").addEventListener( 'click', mensaje, false );
-
-            }
-            function oslo()
-            {
-                    document.getElementById("Tijera").addEventListener( 'click', colorado, false );
-                    document.getElementById("Tijera").addEventListener( 'click', mensaje, false );
-                    
-            }
-            
-        </script>
     </head>
     <body onload="cargar(); miami(); oslo();">
         <div class="container">
@@ -330,6 +253,97 @@
             <div class="container-resultado">
                 <div id="result4" class="respuesta"></div>    
             </div>
+            <div>
+                <input type="button" value="Refresh" id="refresca" />
+            </div>
         </div>
+        <script>
+            var op1 = "Piedra";
+            var op2 = "Papel";
+            var op3 = "Tijera";
+            var tuEleccion;
+            var machine;
+            var aleatorio = Math.floor(Math.random()*3);        
+
+           
+            
+
+            /*function dime () {
+                aleatorio = Math.floor(Math.random()*3);
+            }*/
+           
+            switch (aleatorio) {
+                case 1:
+                    machine = op1;
+                    break;
+                case 2:
+                    machine = op2;
+                    break;
+                default:
+                    machine = op3;            
+            }
+    
+            function mensaje() {
+            switch (true) {
+                case (tuEleccion === machine):                
+                    result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Empate, vuelve a jugar</h1></p>";
+                    break 
+                case (tuEleccion == "Piedra" && machine == "Papel"): 
+                    result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
+                    break;
+                case (tuEleccion == "Piedra" && machine == "Tijera"):
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
+                    break;
+                case (tuEleccion == "Papel" && machine == "Piedra"):
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
+                    break;
+                case (tuEleccion == "Papel" && machine == "Tijera"):
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
+                    break;
+                case (tuEleccion == "Tijera" && machine == "Piedra"):
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
+                    break;
+                default:
+                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>"; 
+                }
+            }
+            function elige () {
+                    document.getElementById("Piedra").addEventListener('click', tuEleccion = op1, false);                    
+                    
+            }
+            function dember () {
+                    document.getElementById("Papel").addEventListener('click', tuEleccion = op2, false);
+                    
+            }
+            function colorado () {
+                    document.getElementById("Tijera").addEventListener('click', tuEleccion = op3, false);
+                    
+            }
+            function cargar() {
+                    document.getElementById("Piedra").addEventListener( 'click', elige, false );
+                    document.getElementById("Piedra").addEventListener( 'click', mensaje, false );
+
+            }
+            function miami()
+            {
+                    document.getElementById("Papel").addEventListener( 'click', dember, false );
+                    document.getElementById("Papel").addEventListener( 'click', mensaje, false );
+
+            }
+            function oslo()
+            {
+                    document.getElementById("Tijera").addEventListener( 'click', colorado, false );
+                    document.getElementById("Tijera").addEventListener( 'click', mensaje, false );
+                    
+            }
+
+            var refresh = document.getElementById("refresca");
+            refresh.addEventListener("click", refrescaPorClick);
+            
+            function refrescaPorClick(){
+                location.reload()
+            }
+            
+        </script>
     </body>
     </html>
