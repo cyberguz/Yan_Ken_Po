@@ -195,12 +195,22 @@ body {
     
 }
 @media (max-width: 640px) {
-    .botton_jugar {
-        
+    .botton_jugar {        
         border-radius: 50%;
         width: 20%;
-        height: 15vh;
+        height: 8vh;                        
+    }
+    .botton_jugar > a {
+        font-size: 15px;
         
-                
+    }
+    .title {        
+        width: 30%;
+        height: 20vh;
+        
+    }
+    .imagen {
+        width: 90%;
+        height: 15vh;
     }
 }
