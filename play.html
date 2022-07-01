@@ -6,344 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./play.css">
     <title>Play</title>
-    <style>
-        body {
-            background-color: #140f30;
-            margin: 0px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            background-color: #140f30;
-            width: 90%;
-            height: 98vh;
-            border-radius: 30px;
-            margin-top: 5px;
-            
-        }
-        .alternativas {
-            display: flex;
-            justify-content: space-around;
-            color: bisque;
-            
-        }
-        .container-opcion {
-            background-color: #33090c;
-            margin: 10px 10px 10px 10px; /*arriba, der, abajo, izq*/
-            border-radius: 30%;
-            width: 300px;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-       
-        .button-op {
-            border-radius: 10px;
-            background-color: #911409;
-            border: none;
-            color: bisque;
-            width: 200px;
-            height: 60px;
-            cursor: pointer;
-        }
-        .button-op :hover{
-            color: #f0e802;
-            transform: scale(1.1);
-
-        }
-        .alternative {
-            width: 160px;
-            height: 210px;
-        }
-        .container-eleccion {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-        .container-resultado {
-            
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-        .eleccion {
-            
-            width: 300px;
-            height: 60px;display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .respuesta {
-            
-            width: 500px;
-            height: 60px;
-            height: 60px;display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-       
-        #result, #result2 {
-            color: #76394F;
-        }
-        #result1, #result3 {
-            color: #70b443;
-        }
-        #result4 {
-            color: hsl(56, 100%, 51%);
-            animation-name: uno;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease;             
-            animation-delay: 0s;           
-            }
-            @keyframes uno {
-            0%{
-                transform: translateY(0px);      
-                opacity: 1;          
-            }
-            15% {
-                transform: translateY(0px);
-                opacity: 0.75;
-            }
-            30% {
-                transform: translateY(0px);
-                opacity: 1;
-            }
-            45% {
-                transform: translateY(0px);
-                opacity: 0.75;
-            }
-            60%{
-                transform: translateY(0px);      
-                opacity: 1;          
-            }
-            75% {
-                transform: translateY(0px);
-                opacity: 0.75;
-            }
-            90% {
-                transform: translateY(0px);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(0px);
-                opacity: 0.75;
-            }
-            }
-
-        @media (max-width: 1000px) {
-        .container-opcion {
-            background-color: #33090c;
-            margin: 10px 10px 10px 10px; /*arriba, der, abajo, izq*/
-            border-radius: 40px;
-            width: 200px;
-            height: 270px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .alternative {
-            width: 160px;
-            height: 190px;
-        }
-        .button-op {
-            border-radius: 10px;
-            background-color: #911409;
-            border: none;
-            width: 130px;
-            height: 60px;
-        }
-        }
-        @media (max-width: 640px) {
-        .container-opcion {
-            background-color: #33090c;
-            margin: 10px 5px 10px 5px; /*arriba, der, abajo, izq*/
-            border-radius: 40px;
-            width: 140px;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .alternative {
-            width: 160px;
-            height: 170px;
-        }
-        .button-op {
-            border-radius: 10px;
-            background-color: #911409;
-            border: none;
-            width: 130px;
-            height: 60px;
-        }       
-        }
-        @media (max-width: 480px) {
-        .container-opcion {
-            background-color: #33090c;
-            margin: 10px 5px 10px 5px; /*arriba, der, abajo, izq*/
-            border-radius: 20px;
-            width: 110px;
-            height: 190px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .alternative {
-            width: 120px;
-            height: 120px;
-        }
-        .button-op {
-            border-radius: 10px;
-            background-color: #911409;
-            border: none;
-            width: 100px;
-            height: 55px;
-        }
-        .eleccion {
-            width: 170px;
-            height: 60px;
-            
-        }
-        #result, #result1 {
-            font-size: 11px;
-        }
-        #result2, #result3, #result4 {
-            font-size: 14px;
-        }
-        }
-        
-        </style>
-
-    </head>
-    <body onload="cargar(); miami(); oslo();">
+        </head>
+    <body onload="run(); run1(); run2();">
         <div class="container">
-            <div class="alternativas"><h1>Elije tu jugada</h1></div>
-            <div class="alternativas">
-                <div class="container-opcion">
-                    <div><img class="alternative" src="./Images/Piedras.png" alt="Piedra"></div>
-                    <div class="button" id="rojo">
-                        <button class="button-op" id="Piedra"><h1>Piedra</h1></button>
+            <div class="alternatives"><h1>Choose your game</h1></div>
+            <div class="alternatives">
+                <div class="container-option">
+                    <div><img class="alternative" src="./Images/Piedras.png" alt="Stone"></div>
+                    <div class="button">
+                        <button class="button-op" id="Stone"><h1>Stone</h1></button>
                     </div>
                 </div>
-                <div class="container-opcion">
-                    <div><img class="alternative" src="./Images/Papel.png" alt="Papel"></div>
-                    <div class="button" id="amarillo">
-                        <button class="button-op" id="Papel"><h1>Papel</h1></button>
+                <div class="container-option">
+                    <div><img class="alternative" src="./Images/Papel.png" alt="Paper"></div>
+                    <div class="button">
+                        <button class="button-op" id="Paper"><h1>Paper</h1></button>
                     </div>
                 </div>        
-                <div class="container-opcion">
-                    <div><img class="alternative" src="./Images/Tijera.png" alt="Tijera"></div>
-                    <div class="button" id="azul">
-                        <button class="button-op" id="Tijera"><h1>Tijera</h1></button>
+                <div class="container-option">
+                    <div><img class="alternative" src="./Images/Tijera.png" alt="Scissors"></div>
+                    <div class="button">
+                        <button class="button-op" id="Scissors"><h1>Scissors</h1></button>
                     </div>
                 </div>        
-            </div>
-            <div class="container-eleccion">
-                <div class="eleccion-jugador">
-                    <div id="result" class="eleccion"></div>
-                    <div id="result2" class="eleccion"></div>
-                </div>
-                <div class="eleccion-cyberguz">
-                    <div id="result1" class="eleccion"></div>
-                    <div id="result3" class="eleccion"></div>    
-                </div>                
             </div>
             <div class="container-resultado">
-                <div id="result4" class="respuesta"></div>    
-            </div>
-            <div>
-                <input type="button" value="Refresh" id="refresca" />
-            </div>
-        </div>
-        <script>
-            var op1 = "Piedra";
-            var op2 = "Papel";
-            var op3 = "Tijera";
-            var tuEleccion;
-            var machine;
-            var aleatorio = Math.floor(Math.random()*3);        
-
-           
-            
-
-            /*function dime () {
-                aleatorio = Math.floor(Math.random()*3);
-            }*/
-           
-            switch (aleatorio) {
-                case 1:
-                    machine = op1;
-                    break;
-                case 2:
-                    machine = op2;
-                    break;
-                default:
-                    machine = op3;            
-            }
+                <div>
+                    <div id="result4" class="response"></div>    
+                </div>            
+                <div class="container-choice">                
+                    <div class="choice-computer">
+                        <div id="result1" class="choice"></div>
+                        <div id="result3" class="choice"></div>    
+                    </div>                
+                </div>
     
-            function mensaje() {
-            switch (true) {
-                case (tuEleccion === machine):                
-                    result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Empate, vuelve a jugar</h1></p>";
-                    break 
-                case (tuEleccion == "Piedra" && machine == "Papel"): 
-                    result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
-                    break;
-                case (tuEleccion == "Piedra" && machine == "Tijera"):
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
-                    break;
-                case (tuEleccion == "Papel" && machine == "Piedra"):
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>";
-                    break;
-                case (tuEleccion == "Papel" && machine == "Tijera"):
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
-                    break;
-                case (tuEleccion == "Tijera" && machine == "Piedra"):
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Gana Machine</h1></p>";
-                    break;
-                default:
-                result.innerHTML = "<p><h1> Elegiste </h1></p>"; result1.innerHTML = "<p><h1> Machine eligió </h1></p>"; result2.innerHTML = "<p><h1> " + tuEleccion + "</h1></p>"; result3.innerHTML = "<p><h1>" + machine + "</h1></p>"; result4.innerHTML = "<p><h1>Felicidades, ganaste</h1></p>"; 
-                }
-            }
-            function elige () {
-                    document.getElementById("Piedra").addEventListener('click', tuEleccion = op1, false);                    
-                    
-            }
-            function dember () {
-                    document.getElementById("Papel").addEventListener('click', tuEleccion = op2, false);
-                    
-            }
-            function colorado () {
-                    document.getElementById("Tijera").addEventListener('click', tuEleccion = op3, false);
-                    
-            }
-            function cargar() {
-                    document.getElementById("Piedra").addEventListener( 'click', elige, false );
-                    document.getElementById("Piedra").addEventListener( 'click', mensaje, false );
-
-            }
-            function miami()
-            {
-                    document.getElementById("Papel").addEventListener( 'click', dember, false );
-                    document.getElementById("Papel").addEventListener( 'click', mensaje, false );
-
-            }
-            function oslo()
-            {
-                    document.getElementById("Tijera").addEventListener( 'click', colorado, false );
-                    document.getElementById("Tijera").addEventListener( 'click', mensaje, false );
-                    
-            }
-
-            var refresh = document.getElementById("refresca");
-            refresh.addEventListener("click", refrescaPorClick);
+                <div class="reload">
+                    <input type="button" value="Refresh" id="refresca" />
+                </div>
+            </div>
             
-            function refrescaPorClick(){
-                location.reload()
-            }
-            
-        </script>
+        </div>
+        <script src="./play.js"></script>
     </body>
     </html>

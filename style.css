@@ -176,8 +176,8 @@ body {
 .botton_jugar {
     border: green 2px solid;
     border-radius: 50%;
-    width: 9%;
-    height: 16vh;
+    width: 15%;
+    height: 15vh;
     display: flex;            
     justify-content: center;
     align-items: center;           
@@ -197,11 +197,14 @@ body {
 @media (max-width: 640px) {
     .botton_jugar {        
         border-radius: 50%;
-        width: 20%;
-        height: 8vh;                        
+        width: 100px;
+        height: 60px;                        
+       
+        
     }
     .botton_jugar > a {
         font-size: 15px;
+        
         
     }
     .title {        
@@ -212,5 +215,9 @@ body {
     .imagen {
         width: 90%;
         height: 15vh;
+    }
+    .botton_jugar :hover {           
+        transform: scale(1.05);
+        
     }
 }
