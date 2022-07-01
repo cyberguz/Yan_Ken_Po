@@ -198,9 +198,21 @@ body {
     
 }
 #result1 {
+    font-size: 12px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+#result4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 10px;
 }
-#result3, #result4 {
+#result3 {
     font-size: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 }
